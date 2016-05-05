@@ -17,12 +17,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
     NSStrokeWidthAttributeName : -3.0
   ]
+  var meme: Meme?
   
   @IBOutlet weak var memeImageView: UIImageView!
   @IBOutlet weak var cameraButton: UIBarButtonItem!
   @IBOutlet weak var topTextField: UITextField!
   @IBOutlet weak var bottomTextField: UITextField!
   @IBOutlet var textFields: [UITextField]!
+  @IBOutlet weak var topToolbar: UIToolbar!
+  @IBOutlet weak var bottomToolbar: UIToolbar!
+  @IBOutlet weak var shareButton: UIBarButtonItem!
   
   
   @IBAction func cameraButtonPressed(sender: AnyObject) {
@@ -33,12 +37,21 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     presentImagePickerVC(sourceType: .PhotoLibrary)
   }
   
+  @IBAction func shareButtonPressed(sender: AnyObject) {
+    save()
+    let activityVC = UIActivityViewController(activityItems: [meme!.memedImage], applicationActivities: nil)
+    presentViewController(activityVC, animated: true, completion: nil)
+    
+  }
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     imagePickerVC.delegate = self
     memeImageView.contentMode = .ScaleAspectFit
     cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
+    shareButton.enabled = false
     setupTextFields()
     subscribeToKeyboardNotifications()
   }
@@ -59,6 +72,32 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
       textField.defaultTextAttributes = memeTextAttributes
       textField.textAlignment = .Center
     }
+  }
+  
+  func save() {
+    meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: memeImageView.image!, memedImage: generateMembedImage())
+  }
+  
+  func generateMembedImage() -> UIImage {
+    
+    // Hide Toolbar
+    topToolbar.hidden = true
+    bottomToolbar.hidden = true
+    
+    // Render view to an image
+    UIGraphicsBeginImageContext(self.view.frame.size)
+    view.drawViewHierarchyInRect(self.view.frame,
+                                 afterScreenUpdates: true)
+    let memedImage : UIImage =
+      UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    
+    // Show toolbar
+    
+    topToolbar.hidden = false
+    bottomToolbar.hidden = false
+    
+    return memedImage
   }
   
   // MARK: Keyboard
@@ -97,6 +136,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
       memeImageView.image = image
     }
     dismissViewControllerAnimated(true, completion: nil)
+    shareButton.enabled = true
   }
   
   func imagePickerControllerDidCancel(picker: UIImagePickerController) {
