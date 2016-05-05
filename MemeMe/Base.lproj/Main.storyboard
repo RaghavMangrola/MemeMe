@@ -41,7 +41,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-Bd-Ldt">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="Abo-0O-CrM"/>
+                                    <barButtonItem systemItem="action" id="Abo-0O-CrM"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0jL-jg-svm"/>
                                     <barButtonItem systemItem="cancel" id="2PU-Vi-Lbl"/>
                                 </items>
