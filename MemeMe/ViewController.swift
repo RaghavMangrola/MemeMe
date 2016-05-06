@@ -38,10 +38,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   }
   
   @IBAction func shareButtonPressed(sender: AnyObject) {
-    save()
-    let activityVC = UIActivityViewController(activityItems: [meme!.memedImage], applicationActivities: nil)
+    let image = generateMembedImage()
+    let activityVC = UIActivityViewController(activityItems: [image], applicationActivities: nil)
     presentViewController(activityVC, animated: true, completion: nil)
     
+    activityVC.completionWithItemsHandler = {(activityType: String?, completed: Bool, returnedItems: [AnyObject]?, activityError: NSError?) in
+      self.save()
+    }
   }
   
   @IBAction func cancelButtonPressed(sender: AnyObject) {
