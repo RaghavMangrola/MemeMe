@@ -58,8 +58,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
     shareButton.enabled = false
     setupTextFields()
-    subscribeToKeyboardNotifications()
     prefersStatusBarHidden()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    subscribeToKeyboardNotifications()
   }
   
   override func viewWillDisappear(animated: Bool) {
@@ -124,11 +128,17 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
   }
   
   func keyboardWillShow(notification: NSNotification) {
-    self.view.frame.origin.y -= getKeyboardHeight(notification)
+    if bottomTextField.isFirstResponder() {
+      self.view.frame.origin.y -= getKeyboardHeight(notification)
+    }
+    
   }
   
   func keyboardWillHide(notifcation: NSNotification) {
-    self.view.frame.origin.y += getKeyboardHeight(notifcation)
+    if bottomTextField.isFirstResponder() {
+      self.view.frame.origin.y += getKeyboardHeight(notifcation)
+    }
+    
   }
   
   func getKeyboardHeight(notification: NSNotification) -> CGFloat {
