@@ -171,5 +171,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     return true
   }
   
+  func textFieldDidBeginEditing(textField: UITextField) {
+    textField.text = ""
+  }
+  
 }
 
