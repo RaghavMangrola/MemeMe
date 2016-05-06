@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -55,14 +56,14 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" placeholder="Bottom Text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kFl-w9-heR">
-                                <rect key="frame" x="259" y="489" width="83" height="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Bottom" placeholder="Bottom" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kFl-w9-heR">
+                                <rect key="frame" x="20" y="489" width="560" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top" placeholder="Top Text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-4I-02t">
-                                <rect key="frame" x="272" y="114" width="57" height="17"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Top" placeholder="Top" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T2J-4I-02t">
+                                <rect key="frame" x="20" y="114" width="560" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
@@ -71,9 +72,13 @@
                             <constraint firstItem="mDg-Bd-Ldt" firstAttribute="leading" secondItem="dNZ-Cw-dp9" secondAttribute="leading" id="1CP-P3-eFW"/>
                             <constraint firstAttribute="trailing" secondItem="mDg-Bd-Ldt" secondAttribute="trailing" id="1YG-ZG-NVk"/>
                             <constraint firstItem="dNZ-Cw-dp9" firstAttribute="top" secondItem="mDg-Bd-Ldt" secondAttribute="bottom" id="6w8-Ye-n9D"/>
+                            <constraint firstItem="T2J-4I-02t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6yg-dx-JAT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kFl-w9-heR" secondAttribute="trailing" id="8AG-f9-s9M"/>
                             <constraint firstItem="mDg-Bd-Ldt" firstAttribute="trailing" secondItem="dNZ-Cw-dp9" secondAttribute="trailing" id="8su-U7-tD2"/>
                             <constraint firstItem="T2J-4I-02t" firstAttribute="top" secondItem="mDg-Bd-Ldt" secondAttribute="bottom" constant="50" id="FX9-U8-Yk1"/>
+                            <constraint firstItem="kFl-w9-heR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LqB-V9-C2z"/>
                             <constraint firstItem="dNZ-Cw-dp9" firstAttribute="leading" secondItem="aDQ-sG-cbt" secondAttribute="leading" id="T8y-LD-Dga"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T2J-4I-02t" secondAttribute="trailing" id="XAt-sE-D6L"/>
                             <constraint firstItem="mDg-Bd-Ldt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aDQ-IU-RH7"/>
                             <constraint firstItem="aDQ-sG-cbt" firstAttribute="top" secondItem="dNZ-Cw-dp9" secondAttribute="bottom" id="d9J-al-Ex9"/>
                             <constraint firstItem="kFl-w9-heR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dhi-6T-cpx"/>
