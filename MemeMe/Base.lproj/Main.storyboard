@@ -44,7 +44,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="0jL-jg-svm"/>
-                                    <barButtonItem systemItem="cancel" id="2PU-Vi-Lbl"/>
+                                    <barButtonItem systemItem="cancel" id="2PU-Vi-Lbl">
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="BYZ-38-t0r" id="nuA-XX-y7V"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-Cw-dp9">

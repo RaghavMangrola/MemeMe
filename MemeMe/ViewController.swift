@@ -44,6 +44,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
   }
   
+  @IBAction func cancelButtonPressed(sender: AnyObject) {
+    topTextField.text = "Top"
+    bottomTextField.text = "Bottom"
+    memeImageView.image = nil
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
