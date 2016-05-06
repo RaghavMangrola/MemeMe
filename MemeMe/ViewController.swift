@@ -54,6 +54,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     shareButton.enabled = false
     setupTextFields()
     subscribeToKeyboardNotifications()
+    prefersStatusBarHidden()
   }
   
   override func viewWillDisappear(animated: Bool) {
@@ -99,6 +100,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     return memedImage
   }
+  
+  override func prefersStatusBarHidden() -> Bool {
+    return true
+  }
+  
   
   // MARK: Keyboard
   
