@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemeCollectionViewController: UICollectionViewController {
+class SentMemesCollectionViewController: UICollectionViewController {
   
   var memes: [Meme] {
     return (UIApplication.sharedApplication().delegate as! AppDelegate).memes

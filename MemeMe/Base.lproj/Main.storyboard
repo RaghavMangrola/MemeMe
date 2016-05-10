@@ -129,10 +129,10 @@
             </objects>
             <point key="canvasLocation" x="565" y="1207"/>
         </scene>
-        <!--Meme Table View Controller-->
+        <!--Sent Memes Table View Controller-->
         <scene sceneID="kHO-mq-Saf">
             <objects>
-                <tableViewController id="69r-ZY-akU" customClass="MemeTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="69r-ZY-akU" customClass="SentMemesTableViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="irS-d7-lNk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="2554" y="774"/>
         </scene>
-        <!--Meme Collection View Controller-->
+        <!--Sent Memes Collection View Controller-->
         <scene sceneID="dKB-Z1-2Wv">
             <objects>
-                <collectionViewController id="2PC-3b-bP0" customClass="MemeCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="2PC-3b-bP0" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="z71-SX-9vZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
