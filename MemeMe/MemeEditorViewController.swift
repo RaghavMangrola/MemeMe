@@ -52,6 +52,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     bottomTextField.text = "Bottom"
     memeImageView.image = nil
     shareButton.enabled = false
+    dismissViewControllerAnimated(true, completion: nil)
   }
   
   override func viewDidLoad() {
