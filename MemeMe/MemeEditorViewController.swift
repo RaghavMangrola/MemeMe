@@ -44,6 +44,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     
     activityVC.completionWithItemsHandler = {(activityType: String?, completed: Bool, returnedItems: [AnyObject]?, activityError: NSError?) in
       self.save()
+      self.dismissViewControllerAnimated(true, completion: nil)
+      let tableViewController = MemeTableViewController() as UITableViewController
+      tableViewController.tableView.reloadData()
+
     }
   }
   
@@ -91,6 +95,10 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
   
   func save() {
     meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, image: memeImageView.image!, memedImage: generateMembedImage())
+    
+    let object = UIApplication.sharedApplication().delegate
+    let appDelegate = object as! AppDelegate
+    appDelegate.memes.append(meme!)
   }
   
   func generateMembedImage() -> UIImage {
