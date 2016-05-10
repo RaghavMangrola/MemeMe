@@ -14,17 +14,9 @@ class SentMemesTableViewController: UITableViewController {
     return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
   }
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    
-  }
-  
   override func viewDidAppear(animated: Bool) {
     self.tableView.reloadData()
   }
-  
-  
   
   // MARK: UITableView Delegate Methods
   
@@ -32,8 +24,8 @@ class SentMemesTableViewController: UITableViewController {
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("tableViewMemeCell", forIndexPath: indexPath)
-    cell.textLabel?.text = "Hello"
-    cell.imageView?.image = memes[indexPath.row].image
+    cell.imageView?.contentMode = .ScaleAspectFit
+    cell.imageView?.image = memes[indexPath.row].memedImage
     return cell
   }
   

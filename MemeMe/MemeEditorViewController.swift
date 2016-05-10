@@ -45,9 +45,6 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     activityVC.completionWithItemsHandler = {(activityType: String?, completed: Bool, returnedItems: [AnyObject]?, activityError: NSError?) in
       self.save()
       self.dismissViewControllerAnimated(true, completion: nil)
-      let tableViewController = MemeTableViewController() as UITableViewController
-      tableViewController.tableView.reloadData()
-
     }
   }
   
@@ -67,7 +64,7 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(.Camera)
     shareButton.enabled = false
     setupTextFields()
-    prefersStatusBarHidden()
+//    prefersStatusBarHidden()
   }
   
   override func viewWillAppear(animated: Bool) {
@@ -123,9 +120,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     return memedImage
   }
   
-  override func prefersStatusBarHidden() -> Bool {
-    return true
-  }
+//  override func prefersStatusBarHidden() -> Bool {
+//    return true
+//  }
   
   
   // MARK: Keyboard

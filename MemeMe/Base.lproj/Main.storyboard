@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dNZ-Cw-dp9">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDg-Bd-Ldt">
@@ -85,13 +85,15 @@
                             <constraint firstItem="aDQ-sG-cbt" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="gtA-2S-3m9"/>
                             <constraint firstItem="aDQ-sG-cbt" firstAttribute="top" secondItem="kFl-w9-heR" secondAttribute="bottom" constant="25" id="iYT-yY-T3B"/>
                             <constraint firstItem="mDg-Bd-Ldt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mUF-Um-LNs"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dNZ-Cw-dp9" secondAttribute="bottom" id="ojT-t4-37u"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dNZ-Cw-dp9" secondAttribute="bottom" constant="44" id="ojT-t4-37u"/>
                             <constraint firstItem="dNZ-Cw-dp9" firstAttribute="trailing" secondItem="aDQ-sG-cbt" secondAttribute="trailing" id="qX7-1D-8ba"/>
+                            <constraint firstItem="aDQ-sG-cbt" firstAttribute="top" secondItem="dNZ-Cw-dp9" secondAttribute="bottom" id="uQh-dt-Ubl"/>
                             <constraint firstItem="T2J-4I-02t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vbk-ab-iOw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="d9J-al-Ex9"/>
+                                <exclude reference="ojT-t4-37u"/>
                             </mask>
                         </variation>
                     </view>
@@ -188,20 +190,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1NN-VZ-DBw">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewMemeCell" id="lgl-uH-p4v">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="collectionViewMemeCell" id="lgl-uH-p4v" customClass="SentMemesCollectionViewCell" customModule="MemeMe" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6x-0U-Hi6">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="105"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="memeImageView" destination="k6x-0U-Hi6" id="Vfs-sR-9YK"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -261,6 +271,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BsS-Z7-by3"/>
+        <segue reference="XUi-Lv-Owe"/>
     </inferredMetricsTieBreakers>
 </document>
