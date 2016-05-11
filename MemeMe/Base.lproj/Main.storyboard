@@ -201,7 +201,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="Fdk-ke-WaR">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="Hd1-Qy-lMk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Hd1-Qy-lMk">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="BsS-Z7-by3"/>
                             </connections>
@@ -257,7 +257,7 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="htt-Xd-Vo8">
-                        <barButtonItem key="rightBarButtonItem" title="+" id="NEo-07-Qtq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NEo-07-Qtq">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="XUi-Lv-Owe"/>
                             </connections>
@@ -311,6 +311,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BsS-Z7-by3"/>
+        <segue reference="XUi-Lv-Owe"/>
     </inferredMetricsTieBreakers>
 </document>
