@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  MemeDetailViewController.swift
 //  MemeMe
 //
 //  Created by Raghav Mangrola on 5/10/16.

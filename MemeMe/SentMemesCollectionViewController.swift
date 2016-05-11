@@ -1,5 +1,5 @@
 //
-//  MemeCollectionViewController.swift
+//  SentMemesCollectionViewController.swift
 //  MemeMe
 //
 //  Created by Raghav Mangrola on 5/10/16.
