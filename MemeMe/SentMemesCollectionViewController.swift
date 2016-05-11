@@ -24,20 +24,26 @@ class SentMemesCollectionViewController: UICollectionViewController {
   override func viewWillAppear(animated: Bool) {
     self.collectionView?.reloadData()
   }
-  
+
   func setupFlowLayout() {
     flowLayout.minimumInteritemSpacing = 1
     flowLayout.minimumLineSpacing = 1
     flowLayout.itemSize = CGSizeMake((view.frame.size.width / 3) - 1, view.frame.size.width / 3)
   }
   
-  override func viewDidAppear(animated: Bool) {
-    self.collectionView!.reloadData()
-  }
-  
   override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
     coordinator.animateAlongsideTransition(nil) { _ in self.setupFlowLayout()}
   }
+  
+  // MARK: CollectionView Delegate Methods
+  
+  override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    let detailVC = storyboard?.instantiateViewControllerWithIdentifier("memeDetailViewController") as! MemeDetailViewController
+    detailVC.meme = memes[indexPath.row].memedImage
+    navigationController?.pushViewController(detailVC, animated: true)
+  }
+  
+  // MARK: CollectionView Data Source Methods
   
   override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return memes.count

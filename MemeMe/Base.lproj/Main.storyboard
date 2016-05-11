@@ -116,7 +116,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3378" y="1224"/>
+            <point key="canvasLocation" x="3378" y="774"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="Cww-XF-4CH">
+            <objects>
+                <viewController storyboardIdentifier="memeDetailViewController" id="Hmh-pK-3e7" customClass="MemeDetailViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BHN-EL-x1D"/>
+                        <viewControllerLayoutGuide type="bottom" id="KpN-JC-SyI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n05-CK-wA3">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="a63-bx-vpR">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a63-bx-vpR" firstAttribute="leading" secondItem="n05-CK-wA3" secondAttribute="leadingMargin" constant="-20" id="BDN-c5-Zsd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="a63-bx-vpR" secondAttribute="trailing" constant="-20" id="cX3-ol-rMV"/>
+                            <constraint firstItem="KpN-JC-SyI" firstAttribute="top" secondItem="a63-bx-vpR" secondAttribute="bottom" id="hlt-jw-0Kg"/>
+                            <constraint firstItem="a63-bx-vpR" firstAttribute="top" secondItem="BHN-EL-x1D" secondAttribute="bottom" id="lnW-cv-vrx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="memeImage" destination="a63-bx-vpR" id="FrO-LA-0In"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhH-Pz-gFA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3294" y="1615"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kE8-W3-RkJ">

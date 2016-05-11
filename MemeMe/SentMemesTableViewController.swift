@@ -24,6 +24,12 @@ class SentMemesTableViewController: UITableViewController {
     return view.frame.size.height / 5
   }
   
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let detailVC = storyboard?.instantiateViewControllerWithIdentifier("memeDetailViewController") as! MemeDetailViewController
+    detailVC.meme = memes[indexPath.row].memedImage
+    navigationController?.pushViewController(detailVC, animated: true)
+  }
+  
   // MARK: UITableView Data Source Methods
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
