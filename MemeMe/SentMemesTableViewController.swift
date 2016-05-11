@@ -20,12 +20,17 @@ class SentMemesTableViewController: UITableViewController {
   
   // MARK: UITableView Delegate Methods
   
+  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    return view.frame.size.height / 5
+  }
+  
   // MARK: UITableView Data Source Methods
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier("tableViewMemeCell", forIndexPath: indexPath)
     cell.imageView?.contentMode = .ScaleAspectFill
     cell.imageView?.image = memes[indexPath.row].memedImage
+    cell.textLabel?.text = "\(memes[indexPath.row].topText) \(memes[indexPath.row].bottomText)"
     return cell
   }
   
