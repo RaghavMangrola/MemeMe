@@ -215,7 +215,7 @@
         <!--Sent Memes Collection View Controller-->
         <scene sceneID="dKB-Z1-2Wv">
             <objects>
-                <collectionViewController id="2PC-3b-bP0" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="sentMemesCollectionView" id="2PC-3b-bP0" customClass="SentMemesCollectionViewController" customModule="MemeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="z71-SX-9vZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

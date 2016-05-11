@@ -22,7 +22,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
   }
   
   override func viewWillAppear(animated: Bool) {
-    self.collectionView?.reloadData()
+    collectionView?.reloadData()
   }
 
   func setupFlowLayout() {
@@ -32,7 +32,10 @@ class SentMemesCollectionViewController: UICollectionViewController {
   }
   
   override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-    coordinator.animateAlongsideTransition(nil) { _ in self.setupFlowLayout()}
+    if self.isViewLoaded(){
+      coordinator.animateAlongsideTransition(nil) { _ in self.setupFlowLayout()}
+    }
+    
   }
   
   // MARK: CollectionView Delegate Methods
@@ -52,7 +55,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionViewMemeCell", forIndexPath: indexPath) as! SentMemesCollectionViewCell
     
-    cell.memeImageView.contentMode = .ScaleAspectFill
+    cell.memeImageView.contentMode = .ScaleAspectFit
     cell.memeImageView.image = memes[indexPath.row].memedImage
     return cell
   }
