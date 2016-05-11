@@ -50,6 +50,9 @@
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aDQ-sG-cbt">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="qxh-nh-21C"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="62z-Hv-8e1"/>
                                     <barButtonItem systemItem="camera" id="Lyf-Lq-xId">
@@ -87,12 +90,14 @@
                             <constraint firstItem="mDg-Bd-Ldt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="mUF-Um-LNs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dNZ-Cw-dp9" secondAttribute="bottom" constant="44" id="ojT-t4-37u"/>
                             <constraint firstItem="dNZ-Cw-dp9" firstAttribute="trailing" secondItem="aDQ-sG-cbt" secondAttribute="trailing" id="qX7-1D-8ba"/>
+                            <constraint firstItem="dNZ-Cw-dp9" firstAttribute="bottom" secondItem="aDQ-sG-cbt" secondAttribute="top" id="t5m-RO-ckb"/>
                             <constraint firstItem="aDQ-sG-cbt" firstAttribute="top" secondItem="dNZ-Cw-dp9" secondAttribute="bottom" id="uQh-dt-Ubl"/>
                             <constraint firstItem="T2J-4I-02t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vbk-ab-iOw"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="d9J-al-Ex9"/>
+                                <exclude reference="uQh-dt-Ubl"/>
                                 <exclude reference="ojT-t4-37u"/>
                             </mask>
                         </variation>
@@ -189,6 +194,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="z71-SX-9vZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1NN-VZ-DBw">
                             <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -203,12 +209,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6x-0U-Hi6">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="105"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k6x-0U-Hi6">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="k6x-0U-Hi6" firstAttribute="top" secondItem="lgl-uH-p4v" secondAttribute="top" id="IJh-3k-cub"/>
+                                    <constraint firstItem="k6x-0U-Hi6" firstAttribute="centerY" secondItem="lgl-uH-p4v" secondAttribute="centerY" id="KYH-J9-4kn"/>
+                                    <constraint firstItem="k6x-0U-Hi6" firstAttribute="leading" secondItem="lgl-uH-p4v" secondAttribute="leading" id="yx5-lu-JCo"/>
+                                    <constraint firstItem="k6x-0U-Hi6" firstAttribute="centerX" secondItem="lgl-uH-p4v" secondAttribute="centerX" id="z43-q1-E3l"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="memeImageView" destination="k6x-0U-Hi6" id="Vfs-sR-9YK"/>
                                 </connections>
@@ -226,6 +238,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="flowLayout" destination="1NN-VZ-DBw" id="02d-KO-ekA"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SLM-pd-mXq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

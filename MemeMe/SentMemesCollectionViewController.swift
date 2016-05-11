@@ -10,12 +10,33 @@ import UIKit
 
 class SentMemesCollectionViewController: UICollectionViewController {
   
+  @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+  
   var memes: [Meme] {
     return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
   }
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    setupFlowLayout()
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    self.collectionView?.reloadData()
+  }
+  
+  func setupFlowLayout() {
+    flowLayout.minimumInteritemSpacing = 1
+    flowLayout.minimumLineSpacing = 1
+    flowLayout.itemSize = CGSizeMake((view.frame.size.width / 3) - 1, view.frame.size.width / 3)
+  }
+  
   override func viewDidAppear(animated: Bool) {
     self.collectionView!.reloadData()
+  }
+  
+  override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    coordinator.animateAlongsideTransition(nil) { _ in self.setupFlowLayout()}
   }
   
   override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -24,7 +45,8 @@ class SentMemesCollectionViewController: UICollectionViewController {
   
   override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier("collectionViewMemeCell", forIndexPath: indexPath) as! SentMemesCollectionViewCell
-    cell.memeImageView.contentMode = .ScaleAspectFit
+    
+    cell.memeImageView.contentMode = .ScaleAspectFill
     cell.memeImageView.image = memes[indexPath.row].memedImage
     return cell
   }
